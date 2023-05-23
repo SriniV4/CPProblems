@@ -1,0 +1,29 @@
+//https://codeforces.com/contest/1624/problem/B
+#include <bits/stdc++.h>
+
+typedef long long ll;
+typedef long double ld;
+using namespace std;
+void setIO(){
+	cin.tie(0) -> sync_with_stdio(0);
+}
+
+void solve(){
+	int a ,b , c;
+	cin >> a >> b >> c;
+	bool first = ((b-(c-b))%a==0) &&( (b-(c-b))>0);
+	bool second = ((a+(c-a)/2)%b==0) && ((c-a)%2==0) && ((a+(c-a)/2)>0);
+	bool third = (((b+(b-a)))%c==0) && ((b+(b-a))>0);;
+	cout << (first || second || third ? "YES":"NO") << "\n";
+}
+int main(){
+	setIO();
+	int t = 1;
+	cin >> t;
+	while(t--)solve();
+}
+
+
+
+
+
