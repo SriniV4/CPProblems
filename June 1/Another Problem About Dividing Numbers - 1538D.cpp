@@ -1,6 +1,13 @@
 /*
-
-
+  Time: ????
+  Num Submissions: 5
+  Learnt: 
+  	a) If need primes until some number n, only sqrt(n) need to be checked for prime factorization
+	b) Don't give up so quickly and reject an idea
+	c) Think of all edge cases
+  Time Complexity : ???
+  Editorial : Same
+  Rating: 1700
 */
 #include <bits/stdc++.h>
 typedef long long ll;
