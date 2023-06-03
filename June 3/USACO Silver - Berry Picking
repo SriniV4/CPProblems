@@ -1,0 +1,54 @@
+/*
+  Learnt: Doublecheck impl -> Many mistakes
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+void setIO(string name = "") {
+	cin.tie(0)->sync_with_stdio(0);
+	if (name.size()) {
+		freopen((name + ".in").c_str(), "r", stdin);
+		freopen((name + ".out").c_str(), "w", stdout);
+	}
+}
+int main(){
+    setIO("berries");
+    int n , k;
+    cin >> n >> k;
+    vector<int> arr(n);
+    int largest = 0;
+    for(int i =0;i<n;i++){
+        cin >> arr[i];
+        largest = max(largest , arr[i]);
+    }
+    int ans = 0;
+    for(int i =1 ;i<=largest;i++){
+        priority_queue<int> berries(arr.begin() , arr.end());
+        int count = 0;
+        while(berries.size() && berries.top() >=i && count<k/2){
+            int num = berries.top();
+            berries.pop();
+            int temp = count;
+            count += min(k/2-count , num/i);
+            num-=min(k/2-temp , num/i)*i;
+            berries.push(num);
+        }
+       // cout << i << ' ' << count << '\n';
+        if(count<k/2)
+            continue;
+        int temp = 0;
+        while(berries.size() && count<k){
+            int num = berries.top();
+            berries.pop();
+            //cout << num << ' ';
+            temp += min(num , i);
+            num-=min(num , i);
+            berries.push(num);
+            count++;
+        }
+       // cout << temp << " " << i << '\n';
+        ans = max(temp , ans);
+    }
+    cout << ans << "\n";
+    
+}
