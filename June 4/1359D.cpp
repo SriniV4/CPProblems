@@ -1,3 +1,11 @@
+/*
+	Date: 04.06.2023
+	Time: 30:00
+	Learnt: 
+		Kadane -> O(N) Max Sum
+		Look for Input Specifications -> Low ai
+	Rating: 2000
+*/
 #include <bits/stdc++.h>
 typedef long long ll;
 typedef long double ld;
