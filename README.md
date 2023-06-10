@@ -1,2 +1,2 @@
-# CF Problems
-Solutions to CF problems
+# CP Problems
+Solutions to CP ( Mainly CF ) problems
